@@ -1,5 +1,6 @@
-const path = require('path')
-const webpack = require('webpack')
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
   'react', 'redux', 'react-redux', 'react-dom', 'redux-thunk', 'classnames', 'redux-saga', 'react-router'
@@ -15,13 +16,17 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: '[name].[chunckhash].js',
-    publicPath: '/public/'
+    filename: '[name].[chunkhash].js',
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/template/index.html',
+      filename: 'index.html',
+      inject: 'body',
     }),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
@@ -40,7 +45,6 @@ module.exports = {
     rules: [
       { test: /\.(js|jsx|es6)$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, 'src'),
         exclude: /node_modules/ },
       { test: /\.scss?$/,
         loader: 'style-loader' },

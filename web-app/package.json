@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server",
     "test": "jest",
     "build": "npm run clean && webpack",
-    "deploy": "npm run clean-prod && cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors"
+    "deploy": "npm run clean-prod && cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors --history-api-fallback --open"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

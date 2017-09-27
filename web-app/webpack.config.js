@@ -19,12 +19,10 @@ module.exports = {
     loaders: [
       { test: /\.(js|jsx|es6)$/,
         use: 'babel-loader',
-        exclude: /node_modules/,
-      },
+        exclude: /node_modules/, },
       {
         test: /\.(sass|scss)$/,
-        use: 'style-loader',
-      },
+        use: 'style-loader', },
       {
         test: /\.scss$/,
         loader: 'css-loader',
@@ -33,8 +31,7 @@ module.exports = {
           localIdentName: '[name]_[local]_[hash:base64:5]',
           sourceMap: true,
           url: false,
-        }
-      },
+        }},
       {
         test: /\.(sass|scss)$/,
         use: 'sass-loader',
