@@ -1,0 +1,19 @@
+// WARNING: Opinionated CSS default setup is opinionated 
+
+/* 
+ * tell browser to account for any border and padding in 
+ * the value you specify for width & height. 
+ * MDN ref: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+*/ 
+
+* {
+  box-sizing: border-box; 
+}
+
+/*
+ * No default browser borders or margins
+*/
+*, body {
+  border: 0;
+  margin: 0;
+}
