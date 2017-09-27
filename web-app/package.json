@@ -6,10 +6,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf tmp",
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
     "test": "jest",
-    "build": " npm run clean && webpack",
-    "deploy": "npm run build && git checkout -- docs/CNAME"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

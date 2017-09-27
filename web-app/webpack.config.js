@@ -34,7 +34,6 @@ module.exports = {
           localIdentName: '[name]_[local]_[hash:base64:5]',
           sourceMap: true,
           url: false,
-
         }
       },
       {
