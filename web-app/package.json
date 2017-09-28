@@ -6,10 +6,10 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf tmp",
-    "clean-prod": "rimraf public",
+    "clean-prod": "rimraf docs",
     "start": "webpack-dev-server",
     "test": "jest",
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && webpack --progress --colors",
     "deploy": "npm run clean-prod && cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "devDependencies": {
